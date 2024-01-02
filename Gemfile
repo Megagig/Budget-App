@@ -25,4 +25,5 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
+gem 'cancancan', '~> 3.5'
 gem 'devise', '~> 4.9'
