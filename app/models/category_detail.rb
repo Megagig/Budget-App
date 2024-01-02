@@ -1,5 +1,4 @@
 class CategoryDetail < ApplicationRecord
-    belongs_to :group
-    belongs_to :category
-  end
-  
+  belongs_to :group
+  belongs_to :category
+end

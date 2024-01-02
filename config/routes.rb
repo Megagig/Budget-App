@@ -3,6 +3,7 @@ Rails.application.routes.draw do
  
   root 'groups#index'
 
-  resources :groups, only: [:index, :show, :new, :create]
+  resources :groups, only: [:index, :new, :create]
+  resources :categories, only: [:index, :new, :create]
 
 end
