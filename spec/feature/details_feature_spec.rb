@@ -4,7 +4,7 @@ RSpec.describe 'details index page', type: :feature do
   before(:each) do
     @user = User.create(name: 'Obi Anthony', email: 'Anthony@example.com', password: 'test2024',
                         password_confirmation: 'test2024')
-    @category = Category.create(name: 'FastFood', icon: 'icon.svg', user: @user)
+    @category = Category.create(name: 'FastFood', icon_url: 'icon.svg', user: @user)
     @detail = Detail.create(name: 'Fast', amount: 20, user: @user)
     @user.confirm
     sign_in @user
