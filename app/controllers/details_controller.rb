@@ -2,9 +2,8 @@ class DetailsController < ApplicationController
   before_action :set_detail, only: %i[edit update destroy]
 
   def index
-    @category = current_user.categories.find_by(id: params[:category_id])
+    @category = Category.find_by_id(params[:category_id])
     @details = @category.details.order(created_at: :desc)
-    @categories = current_user.categories
   end
 
   def show

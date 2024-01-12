@@ -4,5 +4,5 @@ class Category < ApplicationRecord
   has_many :details, through: :category_details
 
   validates :name, presence: true
-  validates :icon, presence: true
+  validates :icon_url, presence: true
 end
