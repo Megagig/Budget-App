@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_30_181647) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_08_140053) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.decimal "amount"
     t.string "name"
+    t.string "icon"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -24,38 +24,42 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_30_181647) do
   end
 
   create_table "category_details", force: :cascade do |t|
-    t.bigint "group_id", null: false
     t.bigint "category_id", null: false
+    t.bigint "detail_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_category_details_on_category_id"
-    t.index ["group_id"], name: "index_category_details_on_group_id"
+    t.index ["detail_id"], name: "index_category_details_on_detail_id"
   end
 
-  create_table "groups", force: :cascade do |t|
-    t.string "icon"
+  create_table "details", force: :cascade do |t|
     t.string "name"
+    t.decimal "amount"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_groups_on_user_id"
+    t.index ["user_id"], name: "index_details_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
+    t.string "email"
+    t.string "encrypted_password"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.string "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "categories", "users"
   add_foreign_key "category_details", "categories"
-  add_foreign_key "category_details", "groups"
-  add_foreign_key "groups", "users"
+  add_foreign_key "category_details", "details"
+  add_foreign_key "details", "users"
 end

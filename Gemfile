@@ -23,7 +23,8 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'rspec-rails'
   gem 'selenium-webdriver'
 end
 gem 'cancancan', '~> 3.5'
-gem 'devise', '~> 4.9'
+gem 'devise', '>= 4.9.3'
