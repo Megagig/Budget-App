@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
 
   def index
-    @users = User.all
+    # @users = User.all
     authorize! :index, @users
   end
 
@@ -42,6 +42,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @user = current_user.id
     @user.destroy
 
     respond_to do |format|

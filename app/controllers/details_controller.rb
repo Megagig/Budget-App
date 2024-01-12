@@ -3,13 +3,8 @@ class DetailsController < ApplicationController
 
   def index
     @category = current_user.categories.find_by(id: params[:category_id])
-
-    if @category.nil?
-      flash[:alert] = 'Category not found'
-      redirect_to categories_path
-    else
-      @details = @category.details.order(created_at: :desc)
-    end
+    @details = @category.details.order(created_at: :desc)
+    @categories = current_user.categories
   end
 
   def show
