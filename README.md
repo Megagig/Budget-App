@@ -64,9 +64,9 @@ Discover the simplicity and power of our Ruby on Rails application designed to e
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](coming soon)
+- [Live Demo Link](https://budget-app-ifyy.onrender.com/)
 
-- [Presentation Video Link](coming soon)
+- [Presentation Video Link](https://www.loom.com/share/c2177c2dde204a99b82f436a3f314d5f)
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
