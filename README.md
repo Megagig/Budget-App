@@ -66,7 +66,7 @@ Discover the simplicity and power of our Ruby on Rails application designed to e
 
 - [Live Demo Link](https://budget-app-0gx5.onrender.com/)
 
-- [Presentation Video Link](https://www.loom.com/share/c2177c2dde204a99b82f436a3f314d5f)
+- [Presentation Video Link](https://www.loom.com/share/42664a7437e24528aa6724a13ea59f3a)
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
