@@ -1,13 +1,10 @@
-<section class="form-container">
+<section class="form-container" style="padding: 0 15px;">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <nav>
-  <%= link_to raw('&larr;'), :back, class: "arrow-link" %>
+    <%= link_to raw('&larr;'), :back, class: "arrow-link" %>
     <h2>REGISTER</h2>
-    <div>
-      <%= f.submit "Next" %>
-    </div>
   </nav>
 
   <div class="field">
@@ -27,6 +24,10 @@
 
   <div class="field">
     <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password Confirmation" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign Up", class: "btn btn-primary" %>
   </div>
 <% end %>
 </section>
